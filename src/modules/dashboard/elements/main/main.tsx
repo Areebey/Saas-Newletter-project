@@ -1,8 +1,8 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 
-// import DashboardOverViewCard from "@/shared/components/cards/overview.card";
-// import SubscribersChart from "@/shared/components/charts/subscribers.chart";
+import DashboardOverViewCard from "@/shared/components/cards/overview.card";
+import SubscribersChart from "@/shared/components/charts/subscribers.chart";
 import { Button } from "@nextui-org/react";
 import { ICONS } from "@/shared/utils/icons";
 import { useState } from "react";
@@ -38,9 +38,9 @@ const Main = () => {
       <div className="w-full flex">
         <div className="w-[65%] min-h-[88vh] pr-5">
           <br />
-          {/* <DashboardOverViewCard /> */}
+          <DashboardOverViewCard />
           <br />
-          {/* <SubscribersChart /> */}
+          <SubscribersChart />
         </div>
         <div className="w-[35%] p-5">
           {/* create newsletter button */}
@@ -84,8 +84,8 @@ const Main = () => {
           <div className="w-full bg-white border rounded p-5 my-3">
             <h5 className="font-medium">Tutorials</h5>
             <p className="text-sm opacity-[.7]">
-              Learn how to get started on becodemy and utilize all our features,
-              directly from the becodemy team.
+              Learn how to get started on CodePoint and utilize all our features,
+              directly from the CodePoint team.
             </p>
             <br />
             <Button className="bg-[#FBCFE8] text-[#831743] rounded-lg h-[35px] flex items-center">
