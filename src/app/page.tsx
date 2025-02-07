@@ -1,9 +1,10 @@
+import Home from '@/modules/home/home'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page
-      
+    <div>
+      <Home/>
     </div>
   )
 }
