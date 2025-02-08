@@ -5,9 +5,9 @@ import { DefaultJsonData } from "@/assets/mails/default";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
-// import { saveEmail } from "@/actions/save.email";
+import { saveEmail } from "@/actions/save.email";
 import toast from "react-hot-toast";
-// import { GetEmailDetails } from "@/actions/get.email-details";
+import { GetEmailDetails } from "@/actions/get.email-details";
 // import { sendEmail } from "@/shared/utils/email.sender";
 
 const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
@@ -49,27 +49,27 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
 
     unlayer?.exportHtml(async (data) => {
       const { design } = data;
-    //   await saveEmail({
-    //     title: subjectTitle,
-    //     content: JSON.stringify(design),
-    //     newsLetterOwnerId: user?.id!,
-    //   }).then((res: any) => {
-    //     toast.success(res.message);
-    //     history.push("/dashboard/write");
-    //   });
+      await saveEmail({
+        title: subjectTitle,
+        content: JSON.stringify(design),
+        newsLetterOwnerId: user?.id!,
+      }).then((res: any) => {
+        toast.success(res.message);
+        history.push("/dashboard/write");
+      });
     });
   };
 
   const getEmailDetails = async () => {
-    // await GetEmailDetails({
-    //   title: subjectTitle,
-    //   newsLetterOwnerId: user?.id!,
-    // }).then((res: any) => {
-    //   if (res) {
-    //     setJsonData(JSON.parse(res?.content));
-    //   }
-    //   setLoading(false);
-    // });
+    await GetEmailDetails({
+      title: subjectTitle,
+      newsLetterOwnerId: user?.id!,
+    }).then((res: any) => {
+      if (res) {
+        setJsonData(JSON.parse(res?.content));
+      }
+      setLoading(false);
+    });
   };
 
   return (

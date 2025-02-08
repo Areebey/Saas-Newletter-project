@@ -1,7 +1,7 @@
 "use client";
 
 // import { deleteEmail } from "@/actions/delete.email";
-// import { getEmails } from "@/actions/get.emails";
+import { getEmails } from "@/actions/get.emails";
 import { ICONS } from "@/shared/utils/icons";
 import { useClerk } from "@clerk/nextjs";
 import { Button } from "@nextui-org/react";
@@ -26,20 +26,20 @@ const Write = () => {
     }
   };
 
-//   useEffect(() => {
-//     FindEmails();
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, [user]);
+  useEffect(() => {
+    FindEmails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
-//   const FindEmails = async () => {
-//     await getEmails({ newsLetterOwnerId: user?.id! })
-//       .then((res) => {
-//         setEmails(res);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
+  const FindEmails = async () => {
+    await getEmails({ newsLetterOwnerId: user?.id! })
+      .then((res) => {
+        setEmails(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
 //   const deleteHanlder = async (id: string) => {
 //     await deleteEmail({ emailId: id }).then((res) => {
@@ -58,8 +58,7 @@ const Write = () => {
       </div>
 
       {/* saved emails */}
-      {emails &&
-        emails.map((i: any) => {
+      {emails && emails.map((i: any) => {
           const formattedTitle = i?.title
             ?.replace(/\s+/g, "-")
             .replace(/&/g, "-");
