@@ -4,7 +4,7 @@ import Subscriber from "@/models/subscriber.model";
 import { connectDb } from "@/shared/libs/db";
 import { validateEmail } from "@/shared/utils/ZeroBounceApi";
 import { clerkClient } from "@clerk/nextjs";
-// import { clerkClient } from "@clerk/nextjs/server";
+// import { ClerkClient } from "@clerk/backend";
 
 export const subscribe = async ({
   email,
@@ -22,7 +22,7 @@ export const subscribe = async ({
     // now we need to find our newsletter owner
     const newsletterOwner = allUsers.find((i) => i.username === username);
 
-    // console.log(newsletterOwner)
+    console.log(newsletterOwner)
 
     if (!newsletterOwner) {
       throw Error("Username is not vaild!");
@@ -48,7 +48,7 @@ export const subscribe = async ({
     const subscriber = await Subscriber.create({
       email,
       newsLetterOwnerId: newsletterOwner?.id,
-      source: "By CodePoint website",
+      source: "Code Point website",
       status: "Subscribed",
     });
     return subscriber;

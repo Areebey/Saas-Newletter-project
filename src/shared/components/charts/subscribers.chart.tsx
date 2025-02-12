@@ -1,5 +1,5 @@
 "use client";
-// import { subscribersAnalytics } from "@/actions/subscribers.analytics";
+import { subscribersAnalytics } from "@/actions/subscribers.analytics";
 import useSubscribersAnalytics from "@/shared/hooks/useSubscribersAnalytics";
 import { useEffect, useState } from "react";
 import {

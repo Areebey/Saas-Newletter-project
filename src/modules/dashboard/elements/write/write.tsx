@@ -1,6 +1,6 @@
 "use client";
 
-// import { deleteEmail } from "@/actions/delete.email";
+import { deleteEmail } from "@/actions/delete.email";
 import { getEmails } from "@/actions/get.emails";
 import { ICONS } from "@/shared/utils/icons";
 import { useClerk } from "@clerk/nextjs";
@@ -41,11 +41,11 @@ const Write = () => {
       });
   };
 
-//   const deleteHanlder = async (id: string) => {
-//     await deleteEmail({ emailId: id }).then((res) => {
-//       FindEmails();
-//     });
-//   };
+  const deleteHanlder = async (id: string) => {
+    await deleteEmail({ emailId: id }).then((res) => {
+      FindEmails();
+    });
+  };
 
   return (
     <div className="w-full flex p-5 flex-wrap gap-6 relative">
@@ -69,7 +69,7 @@ const Write = () => {
             >
               <span
                 className="absolute block z-20 right-2 top-2 text-2xl cursor-pointer"
-                // onClick={() => deleteHanlder(i?._id)}
+                onClick={() => deleteHanlder(i?._id)}
               >
                 {ICONS.delete}
               </span>
