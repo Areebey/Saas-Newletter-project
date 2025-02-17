@@ -24,7 +24,7 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
       const { design, html } = data;
       setJsonData(design);
       await sendEmail({
-        userEmail: ["areeb.codepoint@gmail.com"],
+        userEmail: ["areebrafiq125@gmail.com",],
         subject: subjectTitle,
         content: html,
       }).then((res) => {
@@ -84,13 +84,14 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
           <div className="absolute bottom-0 flex items-center justify-end gap-4 right-0 w-full border-t p-3">
             <Button
               className="bg-transparent cursor-pointer flex items-center gap-1 text-black border border-[#00000048] text-lg rounded-lg"
-              onClick={saveDraft}
+              // onClick={saveDraft}
+              onPress={saveDraft}
             >
               <span className="opacity-[.7]">Save Draft</span>
             </Button>
             <Button
               className="bg-[#000] text-white cursor-pointer flex items-center gap-1 border text-lg rounded-lg"
-              onClick={exportHtml}
+              onPress={exportHtml}
             >
               <span>Send</span>
             </Button>

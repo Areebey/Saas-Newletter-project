@@ -1,6 +1,5 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
-
 import DashboardOverViewCard from "@/shared/components/cards/overview.card";
 import SubscribersChart from "@/shared/components/charts/subscribers.chart";
 import { Button } from "@nextui-org/react";
@@ -68,7 +67,8 @@ const Main = () => {
                       copied ? "bg-blue-200" : "bg-transparent"
                     }`}
                   >
-                    {process.env.NEXT_PUBLIC_WEBSITE_URL}/subscribe?username={user?.username}
+                    {process.env.NEXT_PUBLIC_WEBSITE_URL}/subscribe?username=
+                    {user?.username}
                   </small>
                   <div className="absolute h-[38px] w-[90px] rounded-r-lg bg-[#DFE7FF] right-0 flex items-center justify-center">
                     <span className="text-lg">{ICONS.copy}</span>
@@ -83,8 +83,8 @@ const Main = () => {
           <div className="w-full bg-white border rounded p-5 my-3">
             <h5 className="font-medium">Tutorials</h5>
             <p className="text-sm opacity-[.7]">
-              Learn how to get started on CodePoint and utilize all our features,
-              directly from the CodePoint team.
+              Learn how to get started on codepoint and utilize all our features,
+              directly from our team.
             </p>
             <br />
             <Button className="bg-[#FBCFE8] text-[#831743] rounded-lg h-[35px] flex items-center">

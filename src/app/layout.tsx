@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../shared/styles/globals.css";
-import Providers from "@/shared/utils/Provider";
+import Providers from "@/shared/utils/Providers";
 import localFont from "next/font/local";
 import { ClerkProvider } from '@clerk/nextjs'
 

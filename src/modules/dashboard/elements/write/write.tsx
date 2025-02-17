@@ -58,7 +58,8 @@ const Write = () => {
       </div>
 
       {/* saved emails */}
-      {emails && emails.map((i: any) => {
+      {emails &&
+        emails.map((i: any) => {
           const formattedTitle = i?.title
             ?.replace(/\s+/g, "-")
             .replace(/&/g, "-");

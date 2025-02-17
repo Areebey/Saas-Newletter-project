@@ -10,7 +10,6 @@ const Toolbar = () => {
 
   return (
     <>
-    <div className="flex flex-row gap-3 ">
       <Button color="primary" className="text-lg">
         Start Trial
       </Button>
@@ -29,7 +28,6 @@ const Toolbar = () => {
       ) : (
         <Link href={"/sign-in"}>Login</Link>
       )}
-      </div>
     </>
   );
 };

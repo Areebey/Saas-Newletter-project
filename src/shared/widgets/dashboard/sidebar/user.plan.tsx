@@ -23,8 +23,7 @@ const UserPlan = () => {
     <div className="w-full my-3 p-3 bg-[#FDF1F8] rounded hover:shadow-xl cursor-pointer">
       <div className="w-full flex items-center">
         <h5 className="text-lg font-medium">
-          {membershipLoading ? "..." : "GROW"} 
-          Plan
+          {membershipLoading ? "..." : "GROW"} Plan
         </h5>
         <div
           className="w-[95px] shadow ml-2 cursor-pointer h-[32px] flex justify-center items-center space-x-1 rounded-lg bg-[#E77CAE]"
